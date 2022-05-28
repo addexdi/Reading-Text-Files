@@ -5,15 +5,29 @@
 
 def read_file_content(filename):
     # [assignment] Add your code here 
-    f = open("story.txt", "r")
-    file = f.read()
-    f.close()
-    return "Hello World"
+    text = open("story.txt", "r")
+    file = text.read()
 
+    for line in file:
+        line = line.strip()
+        line = line.lower()
+        line = line.strip("/n, .r")
+    words = file
+    text.close()
+    return words #"Hello World"
+print(read_file_content("./story.txt"))
 
 def count_words():
     text = read_file_content("./story.txt")
     # [assignment] Add your code here
-    output = text.split("")
-    count = dic
-    return {"as": 10, "would": 20}
+    spliced = text.split()
+    d = {}
+    for word in spliced:
+        if word in d:
+            d[word] += 1
+        else:
+            d[word] = 1
+    for key in list(d.keys()):
+        print(key, ":", d[key])
+    return  d #{"as": 10, "would": 20}
+print(count_words())
